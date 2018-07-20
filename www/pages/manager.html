@@ -1,0 +1,128 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Менеджер</div>
+      </div>
+    </div>
+    <div class="page-content">
+      
+
+      <div class="block-title">Установка минимальной суммы заказа</div>
+      <!-- <div class="card">
+        <div class="list no-hairlines-md">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Name</div>
+                  <div class="item-input-wrap">
+                    <input type="text" placeholder="Your name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div> -->
+      <!-- <form class="list form-store-data" id="demo-form">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Name</div>
+              <div class="item-input-wrap">
+                <input name="name" type="text" placeholder="Your name">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form> -->
+      <div class="block padding-top padding-bottom">
+            <div class="display-flex justify-content-space-between align-items-flex-start">
+              <div class="flex-shrink-0"><button class="col button button-raised button-fill"  @click="addAdress">Добавить</button></div>
+              <div class="align-self-center">Добавить менеджера</div>
+              <div class="align-self-flex-end"></div>
+            </div>
+        </div>
+
+      <div class="block-title">Прайс доставки</div>
+      <div class="card data-table">
+        <table>
+          <thead>
+            <tr>
+              <th class="label-cell">Имя</th>
+              <th class="numeric-cell">Номер <br>телефона</th>
+              <th class="numeric-cell">Заведение</th>
+              <th class="numeric-cell">Х</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label-cell">Аружан</td>
+              <td class="numeric-cell">77035552211</td>
+              <td class="numeric-cell">Coffee River</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Мирас</td>
+              <td class="numeric-cell">77094441122</td>
+              <td class="numeric-cell">Coffee River</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Сымбат</td>
+              <td class="numeric-cell">77097772222</td>
+              <td class="numeric-cell">DK Bakery</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Бауыржан</td>
+              <td class="numeric-cell">77040002211</td>
+              <td class="numeric-cell">DK Bakery</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    data: function() {
+      var ios = this.$theme.ios;
+      return {
+        commentsIcon: ios ? '<i class="icon f7-icons">chat_fill</i>' : '<i class="icon material-icons">message</i>',
+        sortIcon: ios ? '<i class="icon f7-icons">sort</i>' : '<i class="icon material-icons">sort</i>',
+        moreIcon: ios ? '<i class="icon f7-icons">more_vertical_round</i>' : '<i class="icon material-icons">more_vert</i>',
+        trashIcon: ios ? '<i class="icon f7-icons">trash</i>' : '<i class="icon material-icons">delete</i>',
+        composeIcon: ios ? '<i class="icon f7-icons">compose</i>' : '<i class="icon material-icons">edit</i>'
+      }
+    },
+    methods:{
+      openConfirm: function () {
+        var app = this.$app;
+        app.dialog.confirm('', 'Вы действительно хотите удалить?', function (name) {
+          app.dialog.alert('Удалено', 'Успешно!');
+        });
+      },
+      openPrompt: function () {
+        var app = this.$app;
+        app.dialog.prompt('', 'Установите минимальную сумму заказа', function (name) {
+           app.dialog.alert('Минимальная сумма ' + name + ' установлена' ,'Успешно!');
+        });
+      },
+      addAdress: function(){
+        var app = this.$app;
+        app.router.navigate('/manager-add/');
+      }
+    }
+  }
+</script>

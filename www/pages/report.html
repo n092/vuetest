@@ -1,0 +1,246 @@
+<template>
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title">Отчеты</div>
+    </div>
+  </div>
+  <div class="page-content">
+    
+    <div class="block-title">Укажите дату</div>
+    <div class="card">
+      <div class="card-header"><span class="color-blue">Укажите дату</span> <span><button class="col button button-small button-raised button-fill">Применить</button></span></div>
+      <div class="card-content card-content-padding">
+          <div class="list no-hairlines-md">
+          <ul>
+            <li>
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <input type="text" placeholder="Выберите диапазон дат" readonly="readonly" id="demo-calendar-range"/>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          </div>
+      </div>
+      <!-- <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div> -->
+    </div>
+
+    <div class="block-title">Полученные заказы</div>
+    <div class="card">
+      <!-- <div class="card-header"><span>«Двойной класс!»</span><span>Нурсултан</span></div> -->
+      <div class="card-content card-content-padding text-align-center">
+          <span class="yellow-circle-icon-size"><span class=" ">14</span> <span class="text-color-yellow"><strong>|</strong></span> 11 <span class="text-color-yellow"><strong>|</strong></span> 3</span> <br>
+          <span class="minus-margin-top text-color-gray">Всего <span class="text-color-gray"><strong>|</strong></span> Выполнено <span class="text-color-gray"><strong>|</strong></span> Отмена</span>
+      </div>
+      <!-- <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div> -->
+    </div>
+    <div class="block-title">Выручка от продаж</div>
+    <div class="card">
+      <!-- <div class="card-header"><span>«Двойной класс!»</span><span>Нурсултан</span></div> -->
+      <div class="card-content card-content-padding text-align-center">
+          <span class="yellow-circle-icon-size">28,250 ₸ <span class="text-color-yellow"><strong>|</strong></span> 2,000 ₸</span> <br>
+          <span class="minus-margin-top text-color-gray">cумма <span class="text-color-gray"><strong>|</strong></span> доставка</span>
+      </div>
+      <!-- <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div> -->
+    </div>
+    <div class="block-title">Сумма за сервис</div>
+    <div class="card">
+      <!-- <div class="card-header"><span>«Двойной класс!»</span><span>Нурсултан</span></div> -->
+      <div class="card-content card-content-padding text-align-center">
+          <span class="yellow-circle-icon-size">914 ₸</span> <br>
+          <span class="minus-margin-top text-color-gray">cумма за сервис</span>
+      </div>
+      <!-- <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div> -->
+    </div>
+    
+    <div class="block-header">
+      <p>Детали заказа</p>
+    </div>
+    <div class="card no-shadow set-border">
+        <div class="card-header">
+          <span>#8642 <small><span class="text-color-gray">Время 11:18</span></small></span>
+          <span></span>
+          <span>
+            <span class="text-color-red">Отменено</span>
+           <!--  <button class=" button button-raised button-small">Вернуть отмену</button> -->
+          </span>
+        </div>
+        <div class="">
+          <div class="card-content card-content-padding">
+            <div class="list">
+              <ul>
+                <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-inner">
+                      <div class="item-title">Детали <small><span class="text-color-gray">Нажмите для раскрытия</span></small></div>
+                    </div></a>
+                  <div class="accordion-item-content">
+                    <div class="block">
+                      <p>
+                        <strong>1 х Маргарита - 1200 ₸</strong> <br>
+                        <strong>1 х Мясная - 1700 ₸</strong>
+                      </p>
+                      <p>
+                        Сумма доставки: <strong>300</strong> <br>
+                        Итого заказ на сумму: <strong>3200 ₸</strong>
+                      </p>
+                      <p>
+                        Сдача с: <strong>0</strong> <br>
+                        Комментарий: <i>без сдачи</i>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>Адрес</span>
+            <span class="text-color-black">Шанырак (1 мкр), Шаштараз асет</span>
+          </div>
+          <div class="card-footer">
+            <span>Отабек</span>
+            <span>77072739595</span>
+            <span><button class="col button button-raised button-fill">Позвонить</button></span>
+          </div>
+        </div>
+    </div>
+    <div class="card no-shadow set-border">
+        <div class="card-header">
+          <span>#8642 <small><span class="text-color-gray">Время 11:18</span></small></span>
+          <span></span>
+          <span>
+            <span class="text-color-green">Завершено</span>
+           <!--  <button class=" button button-raised button-small">Вернуть отмену</button> -->
+          </span>
+        </div>
+        <div class="">
+          <div class="card-content card-content-padding">
+            <div class="list">
+              <ul>
+                <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-inner">
+                      <div class="item-title">Детали <small><span class="text-color-gray">Нажмите для раскрытия</span></small></div>
+                    </div></a>
+                  <div class="accordion-item-content">
+                    <div class="block">
+                      <p>
+                        <strong>1 х Маргарита - 1200 ₸</strong> <br>
+                        <strong>1 х Мясная - 1700 ₸</strong>
+                      </p>
+                      <p>
+                        Сумма доставки: <strong>300</strong> <br>
+                        Итого заказ на сумму: <strong>3200 ₸</strong>
+                      </p>
+                      <p>
+                        Сдача с: <strong>0</strong> <br>
+                        Комментарий: <i>без сдачи</i>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>Адрес</span>
+            <span class="text-color-black">Шанырак (1 мкр), Шаштараз асет</span>
+          </div>
+          <div class="card-footer">
+            <span>Отабек</span>
+            <span>77072739595</span>
+            <span><button class="col button button-raised button-fill">Позвонить</button></span>
+          </div>
+        </div>
+    </div>
+    <!-- <div class="card data-table ">
+      <table>
+        <thead>
+          <tr>
+            <th class="label-cell">Номер заказ</th>
+            <th class="numeric-cell">Список товаров</th>
+            <th class="numeric-cell">Данные клиента</th>
+            <th class="numeric-cell">Сумма заказа</th>
+            <th class="numeric-cell">Сумма за сервис</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-color-red text-color-white">
+            <td class="label-cell">7295</td>
+            <td class="numeric-cell">1 шт. - Маргарита - 1200 ₸</td>
+            <td class="numeric-cell"><strong>Шанырак (1 мкр), 30 дом 23 кв</strong> <br>Pegas - 77025016193</td>
+            <td class="numeric-cell"><strong>1400 ₸</strong>Доставка - 200 ₸ <br> <span class="text-color-gray">Сдача с: 1500</span></td>
+            <td class="numeric-cell">100 ₸</td>
+          </tr>
+          <tr>
+            <td class="label-cell">7321</td>
+            <td class="numeric-cell">1 шт. - Кон карне - 1800 ₸</td>
+            <td class="numeric-cell"><strong>Коктем (4 мкр), Ул.Коктем, дом 32, кв 62</strong> <br>Роза - 77760600995</td></td>
+            <td class="numeric-cell"><strong>2000 ₸</strong>Доставка - 200 ₸ <br> <span class="text-color-gray">Сдача с: 0</span></td>
+            <td class="numeric-cell">100 ₸</td>
+          </tr>
+          <tr>
+            <td class="label-cell">7318</td>
+            <td class="numeric-cell">
+              1 шт. - Лапша по-домашнему с фрикадельками - 900 ₸ <br>
+              1 шт. - Феретта - 1300 ₸ <br>
+              1 шт. - Гюнику ясай - 2000 ₸
+            </td>
+            <td class="numeric-cell"><strong>Арай-1, 11көше. 15үй</strong> <br>Assan - 77776729999</td></td>
+            <td class="numeric-cell"><strong>4500 ₸</strong>Доставка - 300 ₸ <br> <span class="text-color-gray">Сдача с: 10000</span></td>
+            <td class="numeric-cell">100 ₸</td>
+          </tr>
+          <tr>
+            <td class="label-cell">7307</td>
+            <td class="numeric-cell">
+              2 шт. - Люля кебаб из баранины - 2600 ₸ <br> 
+              2 шт. - Шашлык из баранины - 4000 ₸
+            </td>
+            <td class="numeric-cell"><strong>Арай-1, 11ул 15дом (5-19дың арты)</strong> <br>Assan - 77776729999</td></td>
+            <td class="numeric-cell"><strong>6900 ₸</strong>Доставка - 300 ₸ <br> <span class="text-color-gray">Сдача с: 0</span></td>
+            <td class="numeric-cell">100 ₸</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+  </div>
+</div>  
+</template>
+<script>
+  return {
+    methods: {
+      createsale: function () {
+        var app = this.$app;
+        app.router.navigate('/create-sale/');
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var today = new Date();
+        var app = self.$app;
+        var $ = self.$;
+
+        // Range Picker
+        self.calendarRange = app.calendar.create({
+          inputEl: '#demo-calendar-range',
+          dateFormat: 'M dd yyyy',
+          rangePicker: true
+        });
+      },
+      pageBeforeRemove() {
+        var self = this;
+        self.calendarRange.destroy();
+      },
+    }
+  }
+</script>

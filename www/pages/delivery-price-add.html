@@ -1,0 +1,103 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Новый адрес доставки</div>
+      </div>
+    </div>
+    <div class="page-content">
+      
+
+      <div class="block padding-top padding-bottom">
+        <div class="display-flex justify-content-space-between align-items-flex-start">
+          <div class="flex-shrink-0"><button class="col button button-raised button-fill" @click="saveAndBack">Сохранить</button></div>
+          <div class="align-self-center">Сохранить данные</div>
+          <div class="align-self-flex-end"></div>
+        </div>
+      </div>
+
+      <div class="block-title">Данные нового адреса</div>
+      <div class="card">
+        <form class="list form-store-data" id="demo-form">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Выберите адрес</div>
+                <div class="item-input-wrap input-dropdown-wrap">
+                  <select name="changestatus" placeholder="Выберите...">
+                    <option value="val1">Шанырак (1 мкр)</option>
+                    <option value="val2">Шугыла (2 мкр)</option>
+                    <option value="val3">Самал (3 мкр)</option>
+                    <option value="val4">Коктем (4 мкр)</option>
+                    <option value="val5">Оркен (5 мкр)</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Цена доставки</div>
+                <div class="item-input-wrap">
+                  <input name="number-price" type="number" placeholder="Укажите цену за доставку">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Бесплатная доставка свыше:</div>
+                <div class="item-input-wrap">
+                  <input name="number-price-free" type="number" placeholder="Укажите цену за беспл. доставку">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+
+      
+      
+
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    data: function() {
+      var ios = this.$theme.ios;
+      return {
+        commentsIcon: ios ? '<i class="icon f7-icons">chat_fill</i>' : '<i class="icon material-icons">message</i>',
+        sortIcon: ios ? '<i class="icon f7-icons">sort</i>' : '<i class="icon material-icons">sort</i>',
+        moreIcon: ios ? '<i class="icon f7-icons">more_vertical_round</i>' : '<i class="icon material-icons">more_vert</i>',
+        trashIcon: ios ? '<i class="icon f7-icons">trash</i>' : '<i class="icon material-icons">delete</i>',
+        composeIcon: ios ? '<i class="icon f7-icons">compose</i>' : '<i class="icon material-icons">edit</i>'
+      }
+    },
+    methods:{
+      openConfirm: function () {
+        var app = this.$app;
+        app.dialog.confirm('', 'Вы действительно хотите удалить?', function (name) {
+          app.dialog.alert('Удалено', 'Успешно!');
+        });
+      },
+      openPrompt: function () {
+        var app = this.$app;
+        app.dialog.prompt('', 'Установите минимальную сумму заказа', function (name) {
+           app.dialog.alert('Минимальная сумма ' + name + ' установлена' ,'Успешно!');
+        });
+      },
+      saveAndBack: function () {
+        var app = this.$app;
+        app.dialog.alert('Новый адрес добавлен','Успешно!');
+        app.router.back();
+      }
+    }
+  }
+</script>

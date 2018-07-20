@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>Framework7</title>
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <div id="app">
+       <!-- Statusbar -->
+      <!-- <f7-statusbar></f7-statusbar> -->
+
+      <div class="panel panel-left panel-reveal theme-dark">
+        <div class="view" id="left-panel-view">
+          <div class="page page-current">
+            <div class="navbar">
+              <div class="navbar-inner sliding">
+                <div class="title">Menu <strong>&rarr;</strong><!----></div>
+              </div>
+            </div>
+            <div class="page-content"> 
+              <div class="block block-strong">
+                <p>Left panel content goes here</p>
+              </div>
+              <div class="block-title">Load page in main view</div> 
+              <div class="list">
+                <ul>
+                  <li class="">
+                    <a href="/about/" data-view="#main-view" class="item-link panel-close">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">About</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/form/" data-view="#main-view" class="item-link panel-close">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Form</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="view view-main" id="main-view">
+        <div class="page page-current">
+          <div class="navbar">
+            <div class="navbar-inner sliding">
+              <div class="left">
+              <!----> 
+                <a href="#" data-panel="left" class="panel-open icon-only link">
+                  <i class="icon material-icons">menu</i>
+                </a>
+              </div> 
+              <div class="title">My App</div> 
+              <div class="right">
+                <!-- <a href="#" data-panel="right" class="panel-open icon-only link">
+                  <i class="icon material-icons">menu</i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="toolbar"> 
+            <div class="toolbar-inner">
+              <a href="#" class="link">Left Link</a> 
+              <a href="#" class="link">Right Link</a>
+            </div> 
+          </div>
+          <div class="page-content">  
+            <div class="block">
+              <h1>{{message}}</h1>
+              <p>{{simpleText}}</p>
+            </div> 
+            <div class="block-title">Navigation</div> 
+            <div class="list">
+              <ul>
+              <li class="">
+                <a href="/about/" class="item-link">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Новая страница</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="">
+                <a href="/list/" class="item-link">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">List</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+      <div class="popup-backdrop"></div>
+
+    </div> 
+
+    <!-- Path to VUE Library JS-->
+    <script type="text/javascript" src="js/vue.min.js"></script>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+
+    <!-- Path to Framework7 Vue Plugin -->
+    <script type="text/javascript" src="js/framework7-vue.min.js"></script>
+    
+    <!-- Path to your app js where you init your app-->
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

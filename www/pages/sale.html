@@ -1,0 +1,63 @@
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title">Акции</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+
+      <div class="row no-gap">
+        <div class="col-60"><span class="yellow-circle-icon-size">Акции и комбо</span></div>
+        <div class="col-20 text-align-right">
+        </div>
+        <div class="col-20 text-align-right">
+          <div class=" text-align-center">
+            <a  href="/create-sale/" class="button button-raised button-fill text-color-black color-white yellow-circle-icon-size"><i class="fas fa-plus"></i></a>
+
+            <!-- <span class="yellow-circle-icon-size"><i class="fas fa-plus"></i></span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <p>В данном разделе вы сможете создать комбинированный меню и указать цену со скидкой и указать срок действия акции.</p>
+    </div>
+    <div class="block-title">Действующие акции</div>
+    <div class="card">
+      <div class="card-header"><span>«Двойной класс!»</span><span>Нурсултан</span></div>
+      <div class="card-content card-content-padding">
+        Бургер XXL х 2 шт <br>
+        Картофель фри х 2 шт <br>
+        Кола 0,5 х 2 шт
+        <p class="date"><span class="badge">Старт 20.06.2018</span> <span class="badge">Финиш 01.07.2018</span></p>
+      </div>
+      <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div>
+    </div>
+
+    
+    <div class="card demo-card-header-pic">
+      <div style="background-image:url(http://lorempixel.com/1000/600/food/9/)" valign="bottom" class="card-header"><span>«Двойной класс»</span><span>Нурсултан</span></div>
+      <div class="card-content card-content-padding">
+        <p class="date"><span class="badge">Старт 20.06.2018</span> <span class="badge">Финиш 01.07.2018</span></p>
+      </div>
+      <div class="card-footer"><span class="color-blue"><strong>2999 тенге</strong></span> <span><button class="col button button-small button-raised button-fill">Остановить сейчас</button></span></div>
+    </div>
+  </div>
+</div>
+<script>
+  return {
+    methods: {
+      createsale: function () {
+        var app = this.$app;
+        app.router.navigate('/create-sale/');
+      }
+    }
+  }
+</script>

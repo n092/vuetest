@@ -1,0 +1,206 @@
+<template>
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Назад</span>
+          </a>
+        </div>
+      <div class="title">Меню заведения</div>
+      <!-- <div class="right">
+        <a class="link sortable-toggle" data-sortable=".sortable">Сортировать</a>
+      </div> -->
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+
+
+
+      <div class="display-flex justify-content-space-between align-items-flex-start">
+        <div class="flex-shrink-0"><span class="yellow-circle-icon-size">Разделы</span></div>
+        <div class="flex-shrink-1">
+            <div class="segmented segmented-raised">
+              <button class=" button text-color-black color-yellow yellow-circle-icon-size sortable-toggle" data-sortable=".sortable"><i class="fas fa-sort"></i></button>
+              <button class=" button text-color-black color-yellow  yellow-circle-icon-size" @click="openPrompt"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="list sortable">
+      <ul>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Пицца</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Первое блюда</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Блюда из рыбы</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Блюда из курицы</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Блюда из мяса</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Шашлыки</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Суши</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+        <li class="row no-gap">
+            <div class="col-15 padding-top padding-left">
+              <label class="toggle toggle-init color-blue display-block">
+                <input type="checkbox" checked>
+                <span class="toggle-icon"></span>
+              </label>
+            </div>
+            <a href="#" class="col-85 item-link" @click="link">
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Итальянская кухня</div>
+                  <div class="item-after">
+                  </div>
+                </div>
+              </div>
+            </a>
+          <div class="sortable-handler"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+
+    methods: {
+      openPrompt: function () {
+        var app = this.$app;
+        
+        app.dialog.prompt('','Название раздела:', function (name) {
+           
+            app.dialog.alert('Раздел "' + name + '" добавлен','Успешно!');
+        });
+      },
+      link: function () {
+        var app = this.$app;
+        app.router.navigate('/sortable-sub/');
+      }
+    },
+    dialog: {
+      buttonCancel: 'Отмена',
+      buttonOk: 'Добавить',
+    }
+  }
+</script>

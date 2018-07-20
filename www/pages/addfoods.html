@@ -1,0 +1,85 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Раздел Пицца</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block">
+
+        <div class="row no-gap">
+          <div class="col-60"><span class="yellow-circle-icon-size">Пицца</span></div>
+          <div class="col-20 text-align-right">
+            <!-- <a class="link sortable-toggle" data-sortable=".sortable">
+              <div class="yellow-circle text-align-center">
+                <span class="yellow-circle-icon-size"><i class="fas fa-sort"></i></span>
+              </div>
+            </a> -->
+          </div>
+          <div class="col-20 text-align-right">
+            <a class=" button button-raised button-fill text-color-black color-white"  @click="saveValue">
+                <span class="yellow-circle-icon-size"><i class="fas fa-save"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="row">
+          <button class="col button button-fill">Камера <i class="fas fa-camera"></i></button>
+          <button class="col button button-fill">Галерея <i class="fas fa-image"></i></button>
+        </div>
+        <div class="">
+          <p><img data-src="http://via.placeholder.com/360x360" class="lazy lazy-fade-in demo-lazy"></p>
+        </div>
+      </div>
+      <form class="list form-store-data" id="demo-form">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Название</div>
+              <div class="item-input-wrap">
+                <input name="name" type="text" placeholder="Название продукта">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Описание</div>
+              <div class="item-input-wrap">
+                <textarea name="bio" class="resizable" placeholder="Введите состав продукта"></textarea>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Цена</div>
+              <div class="item-input-wrap">
+                <input name="number" type="number" placeholder="Укажите цену за продукт">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      saveValue: function () {
+        var app = this.$app;
+        app.dialog.alert('Данные сохранены','Успешно!');
+        app.router.back();
+      }
+    }
+  }
+</script>

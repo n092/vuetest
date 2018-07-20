@@ -1,0 +1,317 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Режим ONLINE</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block">
+        <p>В данном настройке Вы можете управлять статусом заведения ONLINE, данная функция позволяет установить автоматически смену статуса заведения. Если ваше заведение будет Онлайн, то пользователи могут просматривать меню и заказывать продукты.</p>
+        <p>Для активация автоматического статуса ONLINE, нужно установить <strong>время открытия</strong> заведения и <strong>время закрытия</strong> заведения, система будет сама регулировать статус заведения. Что позволяет своевременно включать и выключать статус заведения. </p>
+      </div>
+      <div class="block-title">Переключения статуса</div>
+      <div class="card">
+        <form class="list form-store-data" id="demo-form">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Выберите режим статуса Online</div>
+                <div class="item-input-wrap input-dropdown-wrap">
+                  <select name="changestatus" placeholder="Выберите статус...">
+                    <option value="manual">Ручной</option>
+                    <option value="automatic">Автоматический</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+
+      <div class="block-title">Установка времени</div>
+      <div class="card">
+        <div class="list no-hairlines-md">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Выберите время открытия</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Установить время открытия" readonly="readonly" id="demo-picker-custom-toolbar"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Выберите время закрытия</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Установить время закрытия" readonly="readonly" id="demo-picker-custom-toolbar2"/>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+      
+
+      <!-- <div class="block-title">Inline Picker / Date-time</div>
+      <div class="list no-margin">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Date Time" readonly="readonly" id="demo-picker-date"/>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block block-strong no-padding no-margin margin-bottom">
+        <div id="demo-picker-date-container"></div>
+      </div> -->
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var today = new Date();
+        var app = self.$app;
+
+        // Custom Toolbar 1
+        self.pickerCustomToolbar = app.picker.create({
+          inputEl: '#demo-picker-custom-toolbar',
+          rotateEffect: true,
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+                '<div class="left">' +
+                  // '<a href="#" class="link toolbar-randomize-link">Randomize</a>' +
+                '</div>' +
+                '<div class="right">' +
+                  '<a href="#" class="link sheet-close popover-close">Установить</a>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+          },
+          cols: [
+            {
+              divider: true,
+              content: '&nbsp;&nbsp;'
+            },
+            // Hours
+            {
+              values: (function () {
+                var arr = [];
+                for (var i = 0; i <= 23; i++) { arr.push(i); }
+                  return arr;
+              })(),
+            },
+            // Divider
+            {
+              divider: true,
+              content: ':'
+            },
+            // Minutes
+            {
+              values: (function () {
+                var arr = [];
+                for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+                  return arr;
+              })(),
+            }
+          ],
+          // OLD SETTING
+          // on: {
+          //   open: function (picker) {
+          //     picker.$el.find('.toolbar-randomize-link').on('click', function () {
+          //       var col0Values = picker.cols[0].values;
+          //       var col0Random = col0Values[Math.floor(Math.random() * col0Values.length)];
+
+          //       var col1Values = picker.cols[1].values;
+          //       var col1Random = col1Values[Math.floor(Math.random() * col1Values.length)];
+
+          //       var col2Values = picker.cols[2].values;
+          //       var col2Random = col2Values[Math.floor(Math.random() * col2Values.length)];
+
+          //       picker.setValue([col0Random, col1Random, col2Random]);
+          //     });
+          //   },
+          // }
+          on: {
+            change: function (picker, values, displayValues) {
+              var daysInMonth = new Date(picker.value[2], picker.value[0]*1 + 1, 0).getDate();
+              if (values[1] > daysInMonth) {
+                picker.cols[1].setValue(daysInMonth);
+              }
+            },
+          }
+        });
+
+        // Inline date-time
+        // self.pickerInline = app.picker.create({
+        //   containerEl: '#demo-picker-date-container',
+        //   inputEl: '#demo-picker-date',
+        //   toolbar: false,
+        //   rotateEffect: true,
+        //   value: [
+        //     // today.getMonth(),
+        //     // today.getDate(),
+        //     // today.getFullYear(),
+        //     today.getHours(),
+        //     today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes()
+        //   ],
+        //   formatValue: function (values, displayValues) {
+        //      // + ', ' + values[2] + ' ' + values[3] + ':' + values[4]
+        //     return displayValues[0] + ' ' + values[1];
+        //   },
+        //   cols: [
+        //     // Months
+        //     // {
+        //     //   values: ('0 1 2 3 4 5 6 7 8 9 10 11').split(' '),
+        //     //   displayValues: ('January February March April May June July August September October November December').split(' '),
+        //     //   textAlign: 'left'
+        //     // },
+        //     // Days
+        //     // {
+        //     //   values: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+        //     // },
+        //     // Years
+        //     // {
+        //     //   values: (function () {
+        //     //     var arr = [];
+        //     //     for (var i = 1950; i <= 2030; i++) { arr.push(i); }
+        //     //       return arr;
+        //     //   })(),
+        //     // },
+        //     // Space divider
+        //     {
+        //       divider: true,
+        //       content: '&nbsp;&nbsp;'
+        //     },
+        //     // Hours
+        //     {
+        //       values: (function () {
+        //         var arr = [];
+        //         for (var i = 0; i <= 23; i++) { arr.push(i); }
+        //           return arr;
+        //       })(),
+        //     },
+        //     // Divider
+        //     {
+        //       divider: true,
+        //       content: ':'
+        //     },
+        //     // Minutes
+        //     {
+        //       values: (function () {
+        //         var arr = [];
+        //         for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+        //           return arr;
+        //       })(),
+        //     }
+        //   ],
+        //   on: {
+        //     change: function (picker, values, displayValues) {
+        //       var daysInMonth = new Date(picker.value[2], picker.value[0]*1 + 1, 0).getDate();
+        //       if (values[1] > daysInMonth) {
+        //         picker.cols[1].setValue(daysInMonth);
+        //       }
+        //     },
+        //   }
+        // });
+
+        // Custom Toolbar 2
+        self.pickerCustomToolbar = app.picker.create({
+          inputEl: '#demo-picker-custom-toolbar2',
+          rotateEffect: true,
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+                '<div class="left">' +
+                  // '<a href="#" class="link toolbar-randomize-link">Randomize</a>' +
+                '</div>' +
+                '<div class="right">' +
+                  '<a href="#" class="link sheet-close popover-close">Установить</a>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+          },
+          cols: [
+            {
+              divider: true,
+              content: '&nbsp;&nbsp;'
+            },
+            // Hours
+            {
+              values: (function () {
+                var arr = [];
+                for (var i = 0; i <= 23; i++) { arr.push(i); }
+                  return arr;
+              })(),
+            },
+            // Divider
+            {
+              divider: true,
+              content: ':'
+            },
+            // Minutes
+            {
+              values: (function () {
+                var arr = [];
+                for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+                  return arr;
+              })(),
+            }
+          ],
+          // OLD SETTING
+          // on: {
+          //   open: function (picker) {
+          //     picker.$el.find('.toolbar-randomize-link').on('click', function () {
+          //       var col0Values = picker.cols[0].values;
+          //       var col0Random = col0Values[Math.floor(Math.random() * col0Values.length)];
+
+          //       var col1Values = picker.cols[1].values;
+          //       var col1Random = col1Values[Math.floor(Math.random() * col1Values.length)];
+
+          //       var col2Values = picker.cols[2].values;
+          //       var col2Random = col2Values[Math.floor(Math.random() * col2Values.length)];
+
+          //       picker.setValue([col0Random, col1Random, col2Random]);
+          //     });
+          //   },
+          // }
+          on: {
+            change: function (picker, values, displayValues) {
+              var daysInMonth = new Date(picker.value[2], picker.value[0]*1 + 1, 0).getDate();
+              if (values[1] > daysInMonth) {
+                picker.cols[1].setValue(daysInMonth);
+              }
+            },
+          }
+        });
+      },
+      // pageBeforeRemove() {
+      //   var self = this;
+      //   self.pickerDevice.destroy();
+      //   self.pickerDescribe.destroy();
+      //   self.pickerDependent.destroy();
+      //   self.pickerCustomToolbar.destroy();
+      // },
+    }
+  }
+</script>

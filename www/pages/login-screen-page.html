@@ -1,0 +1,58 @@
+<template>
+  <div class="page no-toolbar no-navbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">ALLFOOD <span class="xs">менеджер</span></div>
+      <div class="block">
+        <div class="block-header">Регистрация</div>
+      </div>
+      <form>
+        <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <span class="span-login-screen-input-icon"><i class="fas fa-user"></i></span>
+              <div class="item-inner">
+                <div class="item-title item-label">Имя</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Ваше имя" id="demo-username-2" class="input-with-value">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <span class="span-login-screen-input-icon">+7</span>
+              <div class="item-inner">
+                <div class="item-title item-label">Телефон</div>
+                <div class="item-input-wrap">
+                  <input type="number" placeholder="Ваш телефон номер" id="demo-number-2" class="">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+              <a href="/login-screen-validate/" class="button button-raised button-fill " @click="signIn">Далее</a>
+          <!-- <div class="block-footer">Some text about login information.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        var username = $('input#demo-username-2').val();
+        var number = $('input#demo-number-2').val();
+        app.dialog.alert('Username: ' + username + '<br>Password: ' + number, function () {
+          // app.loginScreen.close();
+          // router.back();
+          app.router.navigate('/login-screen-validate/');
+        })
+      }
+    }
+  }
+</script>

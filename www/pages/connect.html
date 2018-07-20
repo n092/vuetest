@@ -1,0 +1,48 @@
+<template>
+  <div class="page no-toolbar no-navbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">ALLFOOD <small>менеджер</small></div>
+      <div class="block">
+        <div class="block-header">Привязка заведения</div>
+      </div>
+      <form>
+        <!-- <div class="list">
+          <ul>
+            <li class="item-content item-input item-input-with-value">
+              <span class="span-login-screen-input-icon"><i class="fas fa-lock"></i></span>
+              <div class="item-inner">
+                <div class="item-title item-label">Смс пароль</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Смс пароль" id="demo-username-2" class="input-with-value">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+        
+        <div class="block">
+          <a href="#" class="button button-raised button-fill" @click="signIn">Позвонить</a>
+          <div class="block-footer">Для управления заведения <br>вам необходимо позвонить на номер +77081139347 <br> и запросить привязку.</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var router = this.$router;
+        var username = $('input#demo-username-2').val();
+        var number = $('input#demo-number-2').val();
+        app.dialog.alert('Username: ' + username + '<br>Password: ' + number, function () {
+          app.loginScreen.close();
+          router.back();
+        })
+      }
+    }
+  }
+</script>

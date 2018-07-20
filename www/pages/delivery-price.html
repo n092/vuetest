@@ -1,0 +1,112 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Стоимость доставки</div>
+      </div>
+    </div>
+    <div class="page-content">
+      
+
+      <div class="block-title">Установка минимальной суммы заказа</div>
+      <div class="card">
+        <div class="block padding-top padding-bottom">
+            <div class="display-flex justify-content-space-between align-items-flex-start">
+              <div class="flex-shrink-0">Минимальная сумма заказа</div>
+              <div class="align-self-center"><strong>2000</strong></div>
+              <div class="align-self-flex-end"><a href="#" class="link" @click="openPrompt"><i class="fas fa-edit"></i></a></div>
+            </div>
+        </div>
+      </div>
+      <!-- <form class="list form-store-data" id="demo-form">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Name</div>
+              <div class="item-input-wrap">
+                <input name="name" type="text" placeholder="Your name">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form> -->
+      <div class="block padding-top padding-bottom">
+            <div class="display-flex justify-content-space-between align-items-flex-start">
+              <div class="flex-shrink-0"><button class="col button button-raised button-fill"  @click="addAdress">Добавить</button></div>
+              <div class="align-self-center">Добавить адрес доставки</div>
+              <div class="align-self-flex-end"></div>
+            </div>
+        </div>
+
+      <div class="block-title">Прайс доставки</div>
+      <div class="card data-table">
+        <table>
+          <thead>
+            <tr>
+              <th class="label-cell">Микрорайон</th>
+              <th class="numeric-cell">Цена <br>доставки</th>
+              <th class="numeric-cell">Бесплатная <br>доставка <br>свыше</th>
+              <th class="numeric-cell">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="label-cell">Шанырак (1 мкр)</td>
+              <td class="numeric-cell">300</td>
+              <td class="numeric-cell">4999</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Шугыла (2 мкр)</td>
+              <td class="numeric-cell">300</td>
+              <td class="numeric-cell">4999</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Самал (3 мкр)</td>
+              <td class="numeric-cell">300</td>
+              <td class="numeric-cell">4999</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td class="label-cell">Коктем (4 мкр)</td>
+              <td class="numeric-cell">300</td>
+              <td class="numeric-cell">4999</td>
+              <td class="numeric-cell"><a href="#" class="link" @click="openConfirm"><i class="fas fa-times"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods:{
+      openConfirm: function () {
+        var app = this.$app;
+        app.dialog.confirm('', 'Вы действительно хотите удалить?', function (name) {
+          app.dialog.alert('Удалено', 'Успешно!');
+        });
+      },
+      openPrompt: function () {
+        var app = this.$app;
+        app.dialog.prompt('', 'Установите минимальную сумму заказа', function (name) {
+           app.dialog.alert('Минимальная сумма ' + name + ' установлена' ,'Успешно!');
+        });
+      },
+      addAdress: function(){
+        var app = this.$app;
+        app.router.navigate('/delivery-price-add/');
+      }
+    }
+  }
+</script>
